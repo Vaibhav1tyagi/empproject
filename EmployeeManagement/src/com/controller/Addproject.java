@@ -36,7 +36,8 @@ public class Addproject extends HttpServlet {
 		e.setPid(pid);
 		e.setDes(des);
 		DaoImpl in=new DaoImpl();
-		in.Addproject(e);
+		in.AddProject(e);
+		 request.getRequestDispatcher("index.html").include(request,response);
 		}
 
 	/**

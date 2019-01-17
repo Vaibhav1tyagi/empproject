@@ -6,7 +6,7 @@ public class Employee
 	private String name;
 	private String address;
 	private String email;
-	private int contact;
+	private String contact;
 	private int pid;
 	private String des;
 	private int salary;
@@ -47,10 +47,10 @@ public class Employee
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getContact() {
+	public String getContact() {
 		return contact;
 	}
-	public void setContact(int contact) {
+	public void setContact(String contact) {
 		this.contact = contact;
 	}
 	public int getSalary() {

@@ -11,16 +11,16 @@ import com.dao.DaoImpl;
 import com.entity.Employee;
 
 /**
- * Servlet implementation class UpdateEmployee
+ * Servlet implementation class Assign
  */
-@WebServlet("/UpdateEmployee")
-public class UpdateEmployee extends HttpServlet {
+@WebServlet("/Assign")
+public class Assign extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateEmployee() {
+    public Assign() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,25 +29,17 @@ public class UpdateEmployee extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String name=request.getParameter("name");
-		String eids=request.getParameter("eid");
-		String address=request.getParameter("address");
-		String contacts=request.getParameter("contact");
-		String salarys=request.getParameter("salary");
-		String mail=request.getParameter("mail");
-		int eid=Integer.parseInt(eids);
-		int salary=Integer.parseInt(salarys);
-		Employee e=new Employee();
-		e.setAddress(address);
-		e.setName(name);
-		e.setId(eid);
-		e.setSalary(salary);
-		e.setEmail(mail);;
-		e.setContact(contacts);
-		DaoImpl ud=new DaoImpl();
-		ud.updateEmployee(e);
-		request.getRequestDispatcher("index.html").include(request,response);
-		}
+     String eid1=request.getParameter("eid");
+     String pid1=request.getParameter("pid");
+     int eid=Integer.parseInt(eid1);
+     int pid=Integer.parseInt(pid1);
+     Employee e=new Employee();
+     e.setId(eid);
+     e.setPid(pid);
+     DaoImpl as=new DaoImpl();
+     as.assignProject(e);
+     request.getRequestDispatcher("index.html").include(request,response);
+     }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

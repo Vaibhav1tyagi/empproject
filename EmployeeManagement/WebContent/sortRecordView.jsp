@@ -16,13 +16,15 @@ ArrayList<Employee> list=(ArrayList<Employee>)request.getAttribute("list");
 Employee p=null;
 for (int i = 0; i < list.size(); i++) {
 	p=list.get(i);
-	out.println("id : "+ p.getId());
+	
 	out.println("Name : "+ p.getName());
 	out.println("Email Id : "+ p.getEmail());
 	out.println("Contact No : "+ p.getContact());
-	out.println("Address"+p.getAddress());
+	out.println("address: "+ p.getAddress());
+	out.println("<br>");
+
 }
 %>
-<a href="index.html">CLICK HERE FOR HOMEPAGE</a>
+
 </body>
 </html>

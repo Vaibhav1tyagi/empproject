@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>UpdateProject</title>
+<title>Assign here</title>
 </head>
 <body class="body1">
 <style>
@@ -16,14 +16,18 @@ position:absolute;
  left:100px; topL:200px;
 }
 </style>
-<h1 style="color:white"><u> UPDATE PROJECT HERE:</u></h1>
+<h1 style="color:white"><u>ASSIGN PROEJECT TO EMPLOYEE HERE:</u> </h1>
 <div class="center">
-<form action="UpdateProject">
-<h1 style="color:white">Enter Project Id</h1>
-<input type="number" name="pid" id="pid"required>
-<h1 style="color:white">Enter Project Description</h1>
-<input type="text" name="des" id="des"required><br><br>
-<input type="submit" value="Update">
+<form action="Assign">
+<table>
+<tr>
+<td  style="color:white">Enter Eid</td><td>
+<input type="number" id="eid" name="eid"required></td></tr>
+<tr><td style="color:white">Enter Pid</td>
+<td><input type="number" id="pid" name="pid"required></td></tr>
+<tr><td style="color:white"></td><td><input type="submit" value="Assign">
+</td></tr>
+</table>
 </form>
 </div>
 </body>

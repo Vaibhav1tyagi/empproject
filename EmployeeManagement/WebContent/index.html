@@ -2,19 +2,41 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Employee management system</title>
+<title>Employee Management System</title>
 </head>
-<body>
-<h1><center><marquee behavior="alternate"><u>Employee Management System</u>
+<body class="body1">
+<style>
+.body1{
+background-image:url("images/m1.jpeg");
+background-repeat: no-repeat;
+  background-size: cover;
+}
+.h1 {
+color:Black;
+}
+.p{
+color:Black;
+}
+.left{
+position:absolute;
+ left:100px; top:70px;
+}
+</style>
+<h1><marquee behavior="alternate"><u>Employee Management System</u>
 </marquee></center></h1>
-<h1><a href="createEmployee.jsp">*ADD EMPLOYEE</a></h1>
-<h1><a href="view.jsp">*VIEW EMPLOYEE</a></h1>
-<h1><a href="updateEmployeeDetails.jsp">*UPDATE EMPLOYEE</a></h1>
-<h1><a href="delete.jsp">*DELETE EMPLOYEE</a></h1>
-<h1><a href="Addproject.jsp">*ADD PROJECT</a></h1>
-<h1><a href="updateProject.jsp">*UPDATE PROJECT</a></h1>
-<h1><a href="deleteproject.jsp">*DELETE PROJECT</a></h1>
-<h1>*ASSIGN PROJECT</h1>
-<h1>*BACKUP</h1>
+<div class="left">
+<h1><a href="createEmployee.jsp"><p>*ADD EMPLOYEE</p></h1>
+<h1><a href="view.jsp" ><p>*VIEW EMPLOYEE</p></a></h1>
+<h1><a href="updateEmployeeDetails.jsp"><p>*UPDATE EMPLOYEE</p>
+</a></h1>
+<h1><a href="delete.jsp"><p>*DELETE EMPLOYEE</p></a></h1>
+<h1><a href="addProject.jsp"><p>*ADD PROJECT</p></a></h1>
+<h1><a href="updateProject.jsp"><p>*UPDATE PROJECT</p></a></h1>
+<h1><a href="assign.jsp"><p>*ASSIGN PROJECT</p></a></h1>
+<h1><a href="sortEmployee.jsp"><p>*SORT EMPLOYEE</p></a></h1>
+<h1><a href="findEmployee.jsp"><p>*FIND EMPLOYEE WORKING ON A PROJECT"</p>
+</a></h1>
+<h1><p>*BACKUP</p></h1>
+</div>
 </body>
 </html>

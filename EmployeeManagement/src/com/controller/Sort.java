@@ -1,6 +1,8 @@
 package com.controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,16 +13,16 @@ import com.dao.DaoImpl;
 import com.entity.Employee;
 
 /**
- * Servlet implementation class DeleteProject
+ * Servlet implementation class Sort
  */
-@WebServlet("/DeleteProject")
-public class DeleteProject extends HttpServlet {
+@WebServlet("/Sort")
+public class Sort extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DeleteProject() {
+    public Sort() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,14 +31,12 @@ public class DeleteProject extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id=request.getParameter("pid");
-		int id1=Integer.parseInt(id);
-		Employee e=new Employee();
-		e.setPid(id1);
-		DaoImpl dp=new DaoImpl();
-		dp.deleteproject(e);
-		request.getRequestDispatcher("index.html").include(request,response);
-	}
+
+		DaoImpl im=new DaoImpl();
+		List<Employee> list=im.sortRecord();
+		 request.setAttribute("list", list);
+		 request.getRequestDispatcher("sortRecordView.jsp").forward(request, response);
+		 }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

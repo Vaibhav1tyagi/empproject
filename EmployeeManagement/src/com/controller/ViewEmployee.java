@@ -1,7 +1,7 @@
 package com.controller;
 
 import java.io.IOException;
-import java.sql.ResultSet;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,16 +31,16 @@ public class ViewEmployee extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id1=request.getParameter("eid");
-		int id=Integer.parseInt(id1);
-		Employee e=new Employee();
-		e.setId(id);
-		DaoImpl im=new DaoImpl();
-		ResultSet x=im.viewEmoloyee(e);
-		request.setAttribute("rs", x);
-		request.getRequestDispatcher("viewEmployee.jsp").forward(request, response);
-		
-	}
+		// TODO Auto-generated method stub
+	String id1=request.getParameter("eid");
+	int id=Integer.parseInt(id1);
+	Employee e=new Employee();
+	e.setId(id);
+	DaoImpl im=new DaoImpl();
+	 List<Employee> list=im.showDetails(e);
+	 request.setAttribute("list", list);
+	 request.getRequestDispatcher("viewEmployee.jsp").forward(request, response);
+	 }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

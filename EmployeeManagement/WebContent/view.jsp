@@ -6,14 +6,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
+<body class="body1">
+<style>
+.body1{
+background-image:url("images/1.jpg")
+}
+.center{
+position:absolute;
+ left:50px; topL:200px;
+}
+</style>
+<div class="center">
+<h1 style="color:white">VIEW DETAILS HERE</h1>
 <form action="ViewEmployee">
 <table>
-<td>Enter Employee id</td><td><input type="text" id="eid" name="eid"></td></tr>
+<td style="color:white">Enter Employee id</td>
+<td><input type="number" id="eid" name="eid"required></td></tr>
 <tr>
 <td></td><td><input type="Submit" valyue="submit"></td>
 </tr>
 </table>
 </form>
+</div>
 </body>
 </html>

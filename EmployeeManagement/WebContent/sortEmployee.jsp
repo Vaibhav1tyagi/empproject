@@ -4,12 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>DeleteProject</title>
+<title>SortEMployee</title>
 </head>
 <body>
-<form action="DeleteProject">
-<h1>Enter Project ID </h1><input text="text" id="pid" name="pid"><br>
-<input type="submit" value="delete">
+<form action="Sort">
+<input type="submit" value="click here">
 </form>
 
 </body>

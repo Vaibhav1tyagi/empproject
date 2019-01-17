@@ -38,14 +38,13 @@ public class Create extends HttpServlet {
 		String mail=request.getParameter("mail");
 		int eid=Integer.parseInt(eids);
 		int salary=Integer.parseInt(salarys);
-		int contact=Integer.parseInt(contacts);
 		Employee e=new Employee();
 		e.setAddress(address);
 		e.setName(name);
 		e.setId(eid);
 		e.setSalary(salary);
 		e.setEmail(mail);;
-		e.setContact(contact);
+		e.setContact(contacts);
 		DaoImpl in=new DaoImpl();
 		in.createEmployee(e);
 		request.getRequestDispatcher("index.html").include(request,response);

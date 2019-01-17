@@ -6,27 +6,44 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>SignUp</title>
 </head>
-<body>
-<h1><u>ADD EMPLOYEE DETAILS HERE:</u> </h1>
+<body class="body1">
+<style>
+.body1{
+background-image:url("images/1.jpg")
+}
+.center{
+position:absolute;
+ left:50px; topL:200px;
+}
+</style>
+<h1 style="color:white"><u>ADD EMPLOYEE DETAILS HERE:</u> </h1>
+<div class="center">
 <form action="Create">
 <table align="center">
 <tr>
-<td>Enter Employee name</td><td><input type="text" id="name" name="name"></td></tr>
+<td style="color:white">Enter Employee name</td><td>
+<input type="text" id="name" name="name"required></td></tr>
 <tr>
-<td>Enter Employee id</td><td><input type="text" id="eid" name="eid"></td></tr>
+<td style="color:white">Enter Employee id</td><td>
+<input type="number" id="eid" name="eid"required></td></tr>
 <tr>
-<td>Enter Employee contact no</td><td><input type="text" id="contact" name="contact"></td></tr>
+<td style="color:white">Enter Employee contact no</td><td>
+<input type="number" id="contact" name="contact"required></td></tr>
 <tr>
-<td>Enter Employee address</td><td><input type="text" id="address" name="address"></td></tr>
+<td style="color:white">Enter Employee address</td><td>
+<input type="text" id="address" name="address"required></td></tr>
 <tr>
-<td>Enter Employee email</td><td><input type="text" id="mail" name="mail"></td></tr>
+<td style="color:white">Enter Employee email</td><td>
+<input type="text" id="mail" name="mail"required></td></tr>
 <tr>
 <tr>
-<td>Enter Employee Salary</td><td><input type="text" id="salary" name="salary"></td></tr>
+<td style="color:white">Enter Employee Salary</td><td>
+<input type="text" id="salary" name="salary"required></td></tr>
 <tr>
 <tr>
 <td></td><td><input type="Submit" valyue="submit"></td></tr>
 </table>
 </form>
+</div>
 </body>
 </html>
