@@ -2,6 +2,8 @@ package com.dao;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.Test;
 
 import com.entity.Employee;
@@ -12,7 +14,7 @@ class DaoImplTest extends DaoImpl {
 	void testCreateEmployee() {
 	Employee e=new Employee();
 	DaoImpl im=new DaoImpl();
-	e.setId(700);
+	e.setId(1000);
 	e.setName("vaibhav");
 	e.setContact("983734280");
 	e.setEmail("xyz@gmail.com");
@@ -28,7 +30,7 @@ class DaoImplTest extends DaoImpl {
 	void testDeleteEmployee() {
 		Employee e=new Employee();
 		DaoImpl im=new DaoImpl();
-		e.setId(2);
+		e.setId(700);
 	
 		boolean value=im.deleteEmployee(e);
 		assertTrue(value);
@@ -38,8 +40,8 @@ class DaoImplTest extends DaoImpl {
 	void testAddProject() {
 		Employee e=new Employee();
 		DaoImpl im=new DaoImpl();
-		e.setPid(600);
-		e.setDes("vaibhavyhh");
+		e.setPid(150);
+		e.setDes("xyz");
 		Object i=im.AddProject(e);
 		assertEquals(null,i);
 		}
@@ -47,8 +49,8 @@ class DaoImplTest extends DaoImpl {
 	void testUpdateProject() {
 		Employee e=new Employee();
 		DaoImpl im=new DaoImpl();
-		e.setPid(50);
-		e.setDes("hhjghjgkg");
+		e.setPid(600);
+		e.setDes("psquickit");
 		Object i1=im.updateProject(e);
 		assertEquals(null,i1);
 		}
@@ -57,19 +59,28 @@ class DaoImplTest extends DaoImpl {
 	void testAssignProject() {
 		Employee e=new Employee();
 		DaoImpl im=new DaoImpl();
-		e.setPid(465);
-		e.setId(45);
+		e.setPid(489);
+		e.setId(95);
 		Object i2=im.assignProject(e);
 		assertEquals(null,i2);
 		}
 	
-/*
+
 	@Test
 	void testShowDetails() {
 		Employee e=new Employee();
 		DaoImpl im=new DaoImpl();
-		}
-	
+		e.setId(91);
+		ArrayList<Employee> outputlist=new ArrayList<Employee>();
+		e.setName("vaibhav");
+		e.setAddress("xy");
+		e.setContact("9837342810");
+        e.setEmail("tyag1282@gmail.com");
+        outputlist.add(e);
+        assertEquals(outputlist.get(0).getId(),im.showDetails(e).get(0).getId());
+        
+	}
+	/*
 
 	@Test
 	void testSortRecord() {
