@@ -22,19 +22,7 @@ class DaoImplTest extends DaoImpl {
 	boolean value=im.createEmployee(e);
 	assertTrue(value);
 	}
-	/*
-  	@Test
- 
- 
-	void testUpdateEmployee() {
-  		Employee e=new Employee();
-		DaoImpl im=new DaoImpl();
-		e.setPid(489);
-		e.setDes("vaibhav");
-		Object i=im.AddProject(e);
-		assertEquals(null,i);
-		}
-  */		
+	
 
 	@Test
 	void testDeleteEmployee() {
@@ -80,10 +68,6 @@ class DaoImplTest extends DaoImpl {
 	void testShowDetails() {
 		Employee e=new Employee();
 		DaoImpl im=new DaoImpl();
-		e.setPid(489);
-		e.setDes("vaibhav");
-		Object i=im.AddProject(e);
-		assertEquals(null,i);
 		}
 	
 
@@ -91,10 +75,6 @@ class DaoImplTest extends DaoImpl {
 	void testSortRecord() {
 		Employee e=new Employee();
 		DaoImpl im=new DaoImpl();
-		e.setPid(489);
-		e.setDes("vaibhav");
-		Object i=im.AddProject(e);
-		assertEquals(null,i);
 		}
 	
 
@@ -102,9 +82,19 @@ class DaoImplTest extends DaoImpl {
 	void testEmployeeOnProject() {
 		Employee e=new Employee();
 		DaoImpl im=new DaoImpl();
+		
+		}*/
+	/*
+  	@Test
+ 
+ 
+	void testUpdateEmployee() {
+  		Employee e=new Employee();
+		DaoImpl im=new DaoImpl();
 		e.setPid(489);
 		e.setDes("vaibhav");
 		Object i=im.AddProject(e);
 		assertEquals(null,i);
-		}*/
+		}
+  */		
 	}
