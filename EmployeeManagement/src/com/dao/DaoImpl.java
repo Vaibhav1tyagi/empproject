@@ -1,3 +1,12 @@
+/*
+ * DaoImpl
+ * 
+ * Version 1.0
+ *
+ * 18-Jan-2019
+ * 
+ * Copyright notice
+ */
 package com.dao; 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,7 +25,7 @@ public class DaoImpl implements Dao  {
 	Statement stmnt=null;
 	ResultSet rs;
 
-	public boolean createEmployee(Employee employee) {
+	public boolean createEmployee(Employee employee) { 						//Function for Adding a Employee
 		// TODO Auto-generated method stub
 		try{
 			PreparedStatement ps=con.prepareStatement("INSERT INTO employee VALUES "
@@ -36,9 +45,9 @@ public class DaoImpl implements Dao  {
 		    } catch(SQLException ex){
 		    	System.out.println(ex);
 		    	}
-		return false;
+		return true;
 		}
-	public boolean updateEmployee(Employee employee) {
+	public boolean updateEmployee(Employee employee) {								//Function for updating Employee record
 		// TODO Auto-generated method stub
 		try {
 			PreparedStatement psu=con.prepareStatement("UPDATE employee SET id=?,"
@@ -53,34 +62,38 @@ public class DaoImpl implements Dao  {
 		    } catch(Exception ex){  	
 			System.out.println(ex);
 			}
-		return false;
+		return true;
 		}	
 	@Override
-	public boolean deleteEmployee(Employee employee) {
+	public boolean deleteEmployee(Employee employee) {													//Function for delete a Employee Record
 		// TODO Auto-generated method stub
 		try {
-			PreparedStatement pv=con.prepareStatement("DELETE  FROM salary WHERE eid=?");
+			PreparedStatement pv=con.prepareStatement
+					("DELETE  FROM salary WHERE eid=?");
 			pv.setInt(1, employee.getId());
 			pv.execute();
-			PreparedStatement ps2=con.prepareStatement("DELETE  FROM empproject WHERE eid=?");
+			PreparedStatement ps2=con.prepareStatement
+					("DELETE  FROM empproject WHERE eid=?");
 			ps2.setInt(1, employee.getId());
 			ps2.execute();
-			PreparedStatement ps1=con.prepareStatement("DELETE  FROM employee WHERE id=?");
+			PreparedStatement ps1=con.prepareStatement
+					("DELETE  FROM employee WHERE id=?");
 			ps1.setInt(1, employee.getId());
 			ps1.execute();
 			} catch(Exception ex){
 			System.out.println(ex);
 			}
-		return false;
+		return true;
 	}
 
 
 	@Override
-	public Employee AddProject(Employee employee) {
+	public Employee AddProject(Employee employee) {										//Function for Adding a Project 
 		// TODO Auto-generated method stub
 		PreparedStatement ps3;
 		try {
-			ps3 = con.prepareStatement("INSERT INTO project VALUES (?,?)");
+			ps3 = con.prepareStatement
+					("INSERT INTO project VALUES (?,?)");
 			ps3.setInt(1, employee.getPid());
 		    ps3.setString(2,employee.getDes() );
 		    ps3.execute();
@@ -93,7 +106,7 @@ public class DaoImpl implements Dao  {
 
 
 	@Override
-	public Employee updateProject(Employee employee) {
+	public Employee updateProject(Employee employee) {								//Function for updateProject details 
 		try {
 			PreparedStatement pd=con.prepareStatement
 					("Update project set pdes=? where pid=?");
@@ -107,7 +120,7 @@ public class DaoImpl implements Dao  {
 		return null;
 	}
 	@Override
-	public Employee assignProject(Employee employee) {
+	public Employee assignProject(Employee employee) {							//Function for Assigning project to a Employees
           try {
 			PreparedStatement as=con.prepareStatement
 					("insert into empproject values (?,?)");
@@ -118,17 +131,17 @@ public class DaoImpl implements Dao  {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-          
 		return null;
 	}
 	@Override
-	public List<Employee> showDetails(Employee e) {
+	public List<Employee> showDetails(Employee e) {								//Function for showing   Employee details
 		// TODO Auto-generated method stub
 		List<Employee> list=new ArrayList<Employee>();
 		
 			PreparedStatement as;
 			try {
-				as = con.prepareStatement("select * from employee where id=?");
+				as = con.prepareStatement
+						("select * from employee where id=?");
 				as.setInt(1, e.getId());
 				ResultSet rs=as.executeQuery();
 				while(rs.next())
@@ -148,12 +161,16 @@ public class DaoImpl implements Dao  {
 			return list;
 	}
 	@Override
-	public List<Employee> sortRecord() {
+	public List<Employee> sortRecord() { 							//Function for Sort  Employee record according to salary
 		// TODO Auto-generated method stub
 		List<Employee> list=new ArrayList<Employee>();
 		try{  
 			
-			PreparedStatement ps5=con.prepareStatement("SELECT employee.contact,employee.name,employee.addresss,employee.email, salary.salary FROM employee INNER JOIN salary ON employee.id=salary.eid ORDER BY salary ASC");
+			PreparedStatement ps5=con.prepareStatement
+					("SELECT employee.contact,employee.name,employee.addresss,employee.email,"
+							+ " salary.salary FROM employee"
+							+ " INNER JOIN salary ON employee.id=salary.eid "
+							+ "ORDER BY salary ASC");
 			ResultSet rs=ps5.executeQuery();
 			while(rs.next()){
 				Employee u=new Employee();
@@ -170,4 +187,27 @@ public class DaoImpl implements Dao  {
 		return list;
 	}
 	
+	public ArrayList<Employee> employeeOnProject(Employee e) {						//Function for Adding a Employee to a Project
+		int idProject= e.getPid();
+		ArrayList<Employee> employeeOnProject= new ArrayList<Employee>();
+		try {
+			
+			stmnt=con.createStatement();
+			rs =stmnt.executeQuery("select id, name from employee where id in "
+					+ "(select eid from empproject "
+					+ "where pid="+idProject+")");
+			while(rs.next()) {
+				
+				Employee employeeProject= new Employee();
+				employeeProject.setId(rs.getInt(1));
+				employeeProject.setName(rs.getString(2));;
+				employeeOnProject.add(employeeProject);
+			}
+		}catch(SQLException ex) {
+			
+			return null;
+		}
+		return employeeOnProject;
+	}
+
 }

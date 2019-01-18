@@ -14,12 +14,13 @@
 <%
 ArrayList<Employee> list=(ArrayList<Employee>)request.getAttribute("list");
 Employee p=null;
+out.println("<h1>Employee Details Are:</h1>");
 for (int i = 0; i < list.size(); i++) {
 	p=list.get(i);
-	out.println("id : "+ p.getId());
-	out.println("Name : "+ p.getName());
-	out.println("Email Id : "+ p.getEmail());
-	out.println("Contact No : "+ p.getContact());
+	out.println("id : "+ p.getId()+"<br>");
+	out.println("Name : "+ p.getName()+"<br>");
+	out.println("Email Id : "+ p.getEmail()+"<br>");
+	out.println("Contact No : "+ p.getContact()+"<br>");
 	out.println("Address"+p.getAddress());
 }
 %>

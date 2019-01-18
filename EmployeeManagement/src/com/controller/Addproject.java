@@ -1,3 +1,12 @@
+/*
+ * AddProject
+ * 
+ * Version 1.0
+ *
+ * 18-Jan-2019
+ * 
+ * Copyright notice
+ */
 package com.controller;
 
 import java.io.IOException;
@@ -29,7 +38,7 @@ public class Addproject extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String pid1=request.getParameter("pid");
+		String pid1=request.getParameter("pid"); 
 		int pid=Integer.parseInt(pid1);
 		String des=request.getParameter("des");
 		Employee e=new Employee();

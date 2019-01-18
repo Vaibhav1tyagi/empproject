@@ -14,6 +14,7 @@
 <%
 ArrayList<Employee> list=(ArrayList<Employee>)request.getAttribute("list");
 Employee p=null;
+out.println("<h1>Sorted Emloyee details  on the basis of salary :</h1>");
 for (int i = 0; i < list.size(); i++) {
 	p=list.get(i);
 	

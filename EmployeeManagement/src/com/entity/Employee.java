@@ -1,17 +1,26 @@
+/*
+ * Employee
+ * 
+ * Version 1.0
+ *
+ * 18-Jan-2019
+ * 
+ * Copyright notice
+ */
 package com.entity;
 
 public class Employee 
 {
-	private int id;
-	private String name;
-	private String address;
-	private String email;
-	private String contact;
-	private int pid;
-	private String des;
-	private int salary;
+	private int id; //Employee id 
+	private String name;//Employee name	
+	private String address;//Employee address
+	private String email;//Employee email
+	private String contact;//Employee contact
+	private int pid;//Employee Project Id
+	private String des;//Employee Description
+	private int salary;//Employee salary
 	
-	public int getPid() {
+	public int getPid() {                                
 		return pid;
 	}
 	public void setPid(int pid) {

@@ -34,7 +34,7 @@ position:absolute;
 <input type="text" id="address" name="address"required></td></tr>
 <tr>
 <td style="color:white">Enter Employee email</td><td>
-<input type="text" id="mail" name="mail"required></td></tr>
+<input type="email" id="mail" name="mail"required></td></tr>
 <tr>
 <tr>
 <td style="color:white">Enter Employee Salary</td><td>

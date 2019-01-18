@@ -7,9 +7,11 @@
 <title>SortEMployee</title>
 </head>
 <body>
+<h1>CLICK HERE FOR SORTED RECORD</h1>
 <form action="Sort">
-<input type="submit" value="click here">
+<center>
+<input type="submit" value=" CILCK HERE">
+</center>
 </form>
-
 </body>
 </html>
